@@ -3,15 +3,16 @@ module.exports = {
     return dataSources.sessionAPI.getSessions(args);
     },
     sessionById: (parent, { id }, { dataSources }, info) => {
-        try {
-            return dataSources.sessionAPI.getSessionById(id);
-        } catch (error) {
-            return {
-                code: 'ERROR',
-                message: 'an error occurred',
-                token: 'uniquetoken'
-            }
-        }
+        return dataSources.sessionAPI.getSessionById(id);
+        // try {
+        //     return dataSources.sessionAPI.getSessionById(id);
+        // } catch (error) {
+        //     return {
+        //         code: 'ERROR',
+        //         message: 'an error occurred',
+        //         token: 'uniquetoken'
+        //     }
+        // }
     },
     speakers: (parent, args, { dataSources }, info) => {
     return dataSources.speakerAPI.getSpeakers(args);
