@@ -27,9 +27,9 @@ module.exports = gql`
     addNewSession(session: SessionInput): Session
   }
   enum Room {
-    Europa
-    Sol
-    Saturn
+    EUROPA
+    SOL
+    SATURN
   }
   input SessionInput {
     title: String!
