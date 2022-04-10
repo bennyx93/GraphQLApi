@@ -10,7 +10,7 @@ module.exports = {
             });
             return returns;
         } catch (err) {
-            return new ApolloError("Unavle to get speakers", "SPEAKERAPIERROR", {
+            return new ApolloError("Unable to get speakers", "SPEAKERAPIERROR", {
                 token: "uniquetoken"
             });
         }

@@ -14,7 +14,7 @@ module.exports = gql`
       track: String
       level: String
     ): [Session]
-    sessionById(id: ID): Session
+    sessionById(id: ID): SessionOrError
     speakers(
       id: ID
       bio: String
@@ -26,6 +26,12 @@ module.exports = gql`
     toggleFavoriteSession(id: ID): Session
     addNewSession(session: SessionInput): Session
   }
+  type Error {
+    code: String
+    message: String
+    token: String
+  }
+  union SessionOrError = Session | Error
   enum Room {
     EUROPA
     SOL
